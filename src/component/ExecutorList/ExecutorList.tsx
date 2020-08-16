@@ -11,15 +11,19 @@ interface IExecutorList {
 
 @observer export default class ExecutorList extends Component<IExecutorList> {
     render() {
-        let list = this.props.list.map(e => <Executor key={e.id} name={e.name} id={e.id} delete={this.props.store.deleteExecutor}/>)
+        let list = this.props.list.map(e => <Executor key={e.id}
+                                                      name={e.name}
+                                                      id={e.id}
+                                                      delete={this.props.store.deleteExecutor}
+        />)
         return (
-            <div >
+            <div style={{margin: '30px 0'}}>
+                <Typography variant='h5'> Исполнители </Typography>
+                {list}
                 <NewExecutorForm addNewExecutor={this.props.store.addNewExecutor}
                                  executorName={this.props.store.newExecutor}
                                  changeExecutorName={this.props.store.changeExecutorName}
                 />
-                <Typography> Исполнители </Typography>
-                {list}
             </div>
         );
     }
