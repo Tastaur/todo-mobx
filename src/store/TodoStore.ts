@@ -5,17 +5,6 @@ class TodoStore {
     @observable todoList: any[] = []
     @observable text = ''
     @observable people = 'Выберите исполнителя'
-    @observable execturors: any[] = [
-        {
-            name: 'Вася'
-        },
-        {
-            name: "Петя"
-        },
-        {
-            name: 'Сережа'
-        },
-    ]
 
     @observable err = ''
 
@@ -66,6 +55,7 @@ class TodoStore {
     @action deleteTodo = (num: number) => {
         this.todoList = this.todoList.filter(t => t.id !== num)
     }
+
 }
 
 export const todoStore = new TodoStore()
