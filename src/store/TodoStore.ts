@@ -15,9 +15,6 @@ class TodoStore {
         {
             name: 'Сережа'
         },
-        {
-            name: 'Общая задача'
-        }
     ]
 
     @observable err = ''
@@ -42,7 +39,7 @@ class TodoStore {
         this.text = e.currentTarget.value
     }
     @action newTodo = () => {
-        if (this.text && this.people !== 'Выберите исполнителя') {
+        if (this.text) {
             let todo = {
                 task: this.text,
                 id: Math.random(),
@@ -55,7 +52,7 @@ class TodoStore {
             this.people = 'Выберите исполнителя'
             this.err = ''
         } else {
-            this.err = 'Необходимо написать задачу и выбрать исполнителя'
+            this.err = 'Необходимо написать задачу'
         }
     }
     @action toggleStatus = (id: number) => {

@@ -22,7 +22,7 @@ interface ITextWrapper {
                     Дата создания: {this.props.time}
                 </Typography>
                 <Typography variant='subtitle2' align='left' color={!this.props.isFinish ? 'textSecondary' : 'error'}>
-                    Ответственный: {this.props.people}
+                    Ответственный: {this.props.people === "Выберите исполнителя" ? 'Общая задача' : this.props.people}
                 </Typography>
             </div>
 

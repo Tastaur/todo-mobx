@@ -29,7 +29,8 @@ class App extends Component {
                         />
                     </div>
                     <div>
-                        <TodoList store={store} list={store.todoList}/>
+                        {store.todoList.length === 0 ? "Добавьте задачу" : <TodoList store={store} list={store.todoList}/>
+                        }
                         {store.todoList.length ? <Indicator allTask={store.allTask} finishTask={store.finishTask}/> : ''}
                     </div>
                 </div>
